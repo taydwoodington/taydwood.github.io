@@ -50,7 +50,7 @@
     <h2>Work/Projects</h2>
     <ul style="text-align: left; display: inline-block;">
       <li><b>Animal Shelter Trends:</b> Analyzing factors affecting animal adoption times.</li>
-      <li><b>Second project in this course</b></li>
+      <li><b>Florida Manatee Population Trends:</b> Understanding Florida Manatee population observations throughout the year and different counties.</li>
       <li><b>Third project in this course</b></li>
       <li><b>Tourism Business Patterns:</b> Understanding factors that make tourist destinations popular.</li>
       <li><b>Childcare for Single Mothers:</b> Analyzing affordability issues and support solutions.</li>
