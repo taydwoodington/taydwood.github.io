@@ -1,7 +1,4 @@
-# taydwood.github.io
----
-layout: default
-title: Taylor Woodington
+
 ---
 
 <style>
