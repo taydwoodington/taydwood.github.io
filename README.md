@@ -46,19 +46,19 @@
     <p>In this page I have included multiple projects which showcase my growth in my data analysis journey with a variety of topics, some focusing on my personal interests in wildlife management.</p>
   </div>
 
-  <div id="projects" class="section">
+   <div id="projects" class="section">
     <h2>Work/Projects</h2>
     <ul style="text-align: left; display: inline-block;">
-      <li><b>Animal Shelter Trends:</b> Analyzing factors affecting animal adoption times.</li>
-      <li><b>Florida Manatee Population Trends:</b> Understanding Florida Manatee population observations throughout the year and different counties.</li>
-      <li><b>Third project in this course</b></li>
-      <li><b>Tourism Business Patterns:</b> Understanding factors that make tourist destinations popular.</li>
-      <li><b>Childcare for Single Mothers:</b> Analyzing affordability issues and support solutions.</li>
-      <li><b>Most Important Aspects of Travel:</b> Examining travel motivations, pricing, and trends.</li>
-      <li><b>Streaming Services Movie Reviews:</b> Analyzing streaming service movie ratings and demographics.</li>
-      <li><b>Endangered Species Comparison:</b> Comparing endangered species trends across locations and years.</li>
-      <li><b>Theme Park Attendance and Ratings Analysis:</b> Exploring the relationship between park attendance and ratings.</li>
-      <li><b>Kia/Hyundai Thefts in the City:</b> Investigating rising car theft trends and solutions.</li>
+      <li><a href="projects/animal-shelter-trends" class="btn">Animal Shelter Trends</a></li>
+      <li><a href="projects/florida-manatee-population-trends" class="btn">Florida Manatee Population Trends</a></li>
+      <li><a href="projects/third-project" class="btn">Third project in this course</a></li>
+      <li><a href="projects/tourism-business-patterns" class="btn">Tourism Business Patterns</a></li>
+      <li><a href="projects/childcare-single-mothers" class="btn">Childcare for Single Mothers</a></li>
+      <li><a href="projects/travel-aspects" class="btn">Most Important Aspects of Travel</a></li>
+      <li><a href="projects/streaming-movie-reviews" class="btn">Streaming Services Movie Reviews</a></li>
+      <li><a href="projects/endangered-species" class="btn">Endangered Species Comparison</a></li>
+      <li><a href="projects/theme-park-analysis" class="btn">Theme Park Attendance and Ratings Analysis</a></li>
+      <li><a href="projects/kia-hyundai-thefts" class="btn">Kia/Hyundai Thefts in the City</a></li>
     </ul>
   </div>
 
