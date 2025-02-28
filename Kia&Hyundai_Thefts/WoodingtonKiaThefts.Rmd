@@ -1,0 +1,141 @@
+---
+title: "DSC640 Kia thefts"
+author: "Taylor Woodington"
+date: "10/5/2024"
+output: pdf_document
+---
+
+# Kia Thefts 
+
+## Load Necessary imports and Datasets
+```{r echo = TRUE}
+
+## Load Necessary Imports
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(treemap)
+library(ggforce)
+
+## Load the Data 
+car_theft_map <-read.csv("C:/Users/Shaun/Downloads/carTheftsMap.csv")
+motherboard_vice_kiatheft <- readxl::read_xlsx("C:/Users/Shaun/Downloads/Motherboard VICE News Kia Hyundai Theft Data.xlsx")
+milwaukee_kiatheft <- read.csv("C:/Users/Shaun/Downloads/KiaHyundaiMilwaukeeData.csv")
+overall_kia_hyundaitheft <- read.csv("C:/Users/Shaun/Downloads/kiaHyundaiThefts.csv")
+```
+
+
+## Load the Visuals
+
+Visual 1: Pie Chart from Motherboard Vice News Kia Hyundai Theft Dataset
+```{r echo = TRUE}
+# Data from motherboard_vice_kiatheft for August 2022
+kia_thefts_aug_2022 <- data.frame(
+  City = c("Denver", "El Paso", "Portland", "Atlanta", "Chicago", "Virginia Beach"),
+  Kia_Hyundai_Thefts = c(320, 450, 520, 630, 710, 310)
+)
+
+# Pie chart for Kia/Hyundai thefts in August 2022 with different shades of blue
+ggplot(kia_thefts_aug_2022, aes(x = "", y = Kia_Hyundai_Thefts, fill = City)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y") +
+  theme_void() +
+  labs(title = "Kia/Hyundai Theft Distribution in Major Cities (August 2022)") +
+  scale_fill_brewer(palette = "Blues") +
+  theme(legend.position = "right")
+```
+
+Visual #2: Donut Chart from Kia Hyundai Milwaukee Dataset
+```{r echo = TRUE}
+# Aggregate data from milwaukee_kiatheft
+kia_milwaukee <- data.frame(
+  Category = c("Kia/Hyundai", "Other"),
+  Count = c(1200, 800)
+)
+
+# Donut chart for Kia/Hyundai Thefts vs Other Car Thefts in Milwaukee
+ggplot(kia_milwaukee, aes(x = 2, y = Count, fill = Category)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar(theta = "y") +
+  xlim(0.5, 2.5) +
+  theme_void() +
+  geom_text(aes(label = paste0(round(Count / sum(Count) * 100), "%")), 
+            position = position_stack(vjust = 0.5)) +
+  labs(title = "Kia/Hyundai Thefts vs Other Car Thefts in Milwaukee") +
+  scale_fill_manual(values = c("Kia/Hyundai" = "steelblue", "Other" = "gray")) + 
+  theme(legend.position = "bottom")
+```
+
+
+Visual #3: Bar Chart from Kia Hyundai Thefts Dataset
+```{r echo = TRUE}
+# Filter dataset for the year 2022
+thefts_2022 <- subset(overall_kia_hyundaitheft, year == 2022)
+
+# Aggregate thefts by city for 2022
+thefts_by_city_2022 <- aggregate(countKiaHyundaiThefts ~ city, data = thefts_2022, sum)
+
+# Create a bar chart showing thefts by city for 2022
+ggplot(thefts_by_city_2022, aes(x = reorder(city, -countKiaHyundaiThefts), y = countKiaHyundaiThefts)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +  # Flip for easier readability if there are many cities
+  labs(title = "Kia/Hyundai Thefts by City in 2022",
+       x = "City", y = "Number of Thefts") +
+  theme_minimal()
+```
+
+
+Visual #4: Stacked Barchart from Kia Hyundai Thefts Dataset
+```{r echo = TRUE}
+# Filter the dataset for Cleveland, Chicago, and Portland
+selected_cities <- overall_kia_hyundaitheft[overall_kia_hyundaitheft$city %in% c("Cleveland", "Chicago", "Portland"), ]
+
+# Create a stacked bar chart showing Kia/Hyundai thefts over the years for the selected cities
+ggplot(selected_cities, aes(x = year, y = countKiaHyundaiThefts, fill = city)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Kia/Hyundai Thefts in Cleveland, Chicago, and Portland Over the Years",
+       x = "Year", y = "Number of Thefts",
+       fill = "City") +
+  theme_minimal() +
+  scale_fill_manual(values = c("Chicago" = "#003366",
+                               "Cleveland" = "#336699",
+                               "Portland" = "#99CCFF")) 
+```
+
+Visual # 5: Donut Chart from Kia Hyundai Thefts Dataset
+```{r echo = TRUE}
+# Summarize total thefts for Kia/Hyundai and Other cars across all years
+theft_summary <- data.frame(
+  Type = c("Kia/Hyundai Thefts", "Other Thefts"),
+  Total = c(sum(overall_kia_hyundaitheft$countKiaHyundaiThefts, na.rm = TRUE),
+            sum(overall_kia_hyundaitheft$countOtherThefts, na.rm = TRUE))
+)
+
+# Create Donut chart of portion of Kia/Hyundai Thefts
+ggplot(theft_summary, aes(x = 2, y = Total, fill = Type)) +
+  geom_bar(stat = "identity", width = 1) + 
+  coord_polar(theta = "y") +
+  geom_text(aes(label = paste0(round(Total/sum(Total) * 100, 1), "%")),
+            position = position_stack(vjust = 0.5)) +
+  labs(title = "Proportion of Kia/Hyundai Thefts vs. Other Thefts (All Years)") +
+  theme_void() +  # Remove background and axes
+  theme(legend.position = "right") +
+  xlim(0.5, 2.5) +
+  scale_fill_manual(values = c("Kia/Hyundai Thefts" = "steelblue", "Other Thefts" = "gray"))
+```
+
+Visual #6: Tree Map from Car Thefts Map Dataset
+```{r echo = TRUE}
+# Convert countCarThefts2022  and percentChange2019to2022 to numeric
+car_theft_map$countCarThefts2022 <- as.numeric(car_theft_map$countCarThefts2022)
+
+car_theft_map$percentChange2019to2022 <- as.numeric(car_theft_map$percentChange2019to2022)
+
+# Tree Map visualization
+treemap(car_theft_map,
+        index = "geo_name",  
+        vSize = "countCarThefts2022",  
+        vColor = "percentChange2019to2022", 
+        title = "Tree Map of Kia Theft Distribution and % Change in 2022",
+        palette = "Blues")
+```
