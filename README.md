@@ -49,7 +49,7 @@
    <div id="projects" class="section">
     <h2>Work/Projects</h2>
     <ul style="text-align: left; display: inline-block;">
-      <li><a href="projects/animal-shelter-trends" class="btn">Animal Shelter Trends</a></li>
+      <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/projects/animal-shelter-trends" class="btn">Animal Shelter Trends</a>
       <li><a href="projects/florida-manatee-population-trends" class="btn">Florida Manatee Population Trends</a></li>
       <li><a href="projects/third-project" class="btn">Third project in this course</a></li>
       <li><a href="projects/tourism-business-patterns" class="btn">Tourism Business Patterns</a></li>
