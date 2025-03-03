@@ -59,8 +59,7 @@
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/Endangered%20Species%20Comparison" class="btn">Endangered Species Comparison</a>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/ThemePark_Attendance%26Rating" class="btn">Theme Park Attendance and Ratings Analysis</a></li>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/Kia%26Hyundai_Thefts" class="btn">Kia/Hyundai Thefts in the City</a>
-    </ul>
-  </div>
+ 
 
   <div id="contact" class="section">
     <h2>Contact</h2>
