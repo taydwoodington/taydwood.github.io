@@ -68,7 +68,8 @@
           <a href="https://github.com/taydwoodington/taydwood.github.io" class="btn">GitHub Repo</a></li>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/Kia%26Hyundai_Thefts" class="btn">Kia/Hyundai Thefts in the City</a>
           <a href="https://github.com/taydwoodington/taydwood.github.io" class="btn">GitHub Repo</a></li>
-
+    </ul>
+  </div>
 
   <div id="contact" class="section">
     <h2>Contact</h2>
@@ -76,3 +77,4 @@
     <p><b>Email:</b> <a href="mailto:Twoodington615@gmail.com">Twoodington615@gmail.com</a></p>
     <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/taylor-woodington-7a6065194" target="_blank">Taylor Woodington</a></p>
   </div>
+</div>
