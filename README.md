@@ -52,12 +52,12 @@
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/Animal_Shelter_Trends" class="btn">Animal Shelter Trends</a>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/Manatee_Pop_Trends" class="btn">Florida Manatee Population Trends</a>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/IUCNRedList" class="btn">IUCN Red List Most Endangered Species</a>
-      <li><a href="projects/tourism-business-patterns" class="btn">Tourism Business Patterns</a></li>
-      <li><a href="projects/childcare-single-mothers" class="btn">Childcare for Single Mothers</a></li>
-      <li><a href="projects/travel-aspects" class="btn">Most Important Aspects of Travel</a></li>
+      <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/TourismBusinessPatterns" class="btn">Tourism Business Patterns</a></li>
+      <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/SingleMothers_Childcare" class="btn">Childcare for Single Mothers</a></li>
+      <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/ImportantAspects_Travel" class="btn">Most Important Aspects of Travel</a></li>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/StreamingService_ReviewAnalysis" class="btn">Streaming Services Movie Reviews</a>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/Endangered%20Species%20Comparison" class="btn">Endangered Species Comparison</a>
-      <li><a href="projects/theme-park-analysis" class="btn">Theme Park Attendance and Ratings Analysis</a></li>
+      <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/ThemePark_Attendance%26Rating" class="btn">Theme Park Attendance and Ratings Analysis</a></li>
       <li><a href="https://github.com/taydwoodington/taydwood.github.io/tree/main/Kia%26Hyundai_Thefts" class="btn">Kia/Hyundai Thefts in the City</a>
     </ul>
   </div>
